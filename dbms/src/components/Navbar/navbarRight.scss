@@ -1,0 +1,131 @@
+
+.navbar-right{
+    border: 1px solid rgba(255,255,255,0.2);
+    min-height: 100vh;
+    z-index: 999;
+    width: 45%;
+    height: 100%;
+    max-width: 100vw;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    flex-direction: column;
+    background-attachment: fixed;
+    color:white;
+    background-color: rgb(32, 32, 32);
+    min-width: 420px;
+
+    .navbar-content,.nav-list-parent,.nav-list{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;        
+    }
+    .navbar-content{
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    .nav-list-parent{
+        font-size: 1.2rem;
+        position: relative;
+        align-items:center; 
+
+        
+        .head{
+           font-weight: 700;
+           font-size: 1.4rem;
+        }
+        
+        .nav-list{
+            width: 100%;
+            position: relative;
+            justify-content: space-evenly;
+            transform: translateX(4.4rem) translateY(2rem);
+            font-size: 1rem;
+            li {
+                padding: 0.4rem 0;
+                list-style-type: none;
+                a {
+                    color:wheat;
+                }
+            }
+        }
+    }
+
+}
+
+.right-links{
+    height: auto;
+}
+
+.navbar-right-show{
+    position: fixed;
+    top:0;
+    right: -2rem;   
+    margin-right: -20rem;
+    transform: rotate(12deg)  translateX(-7rem) translateY(1rem);
+    transition: 0.3s ease-in-out all;
+}
+
+.navbar-right-hide{
+    position: fixed;
+    right: -50rem;
+    top:0;
+    transform: translateY(-50rem) translateX(100rem);
+    opacity:0;
+    transition: 0.3s ease-in-out all;
+}
+
+.unskew-right{
+    height: 100%;
+    width: 100%;
+    right: 0;
+    transform: rotate(-12deg);
+    top:-1rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.cross-right{
+    position: absolute;
+    top: 3rem;
+    right: 18rem;
+    font-size: 2.2rem;
+    transition: 0.1s ease-in-out all;
+    cursor: pointer;
+    padding: .8rem 1.2rem;
+    border-radius: 100px;
+    border: 2px solid #fff;
+}
+
+.cross-right:hover{
+    transform: scale(1.2);
+}
+
+.hamburger-right{
+    font-size: 2.4rem;
+    color: wheat;
+    position: absolute;
+    top:0.6rem;
+    right:2rem;
+    transition: 0.1s ease-in-out all;
+}
+
+.hamburger-right:hover{
+    transform:  scale(1.2);
+}
+
+@media only screen and (max-width:1000px){
+    .navbar-right-show{
+        top:0;
+        right: -2rem;   
+        transform: rotate(12deg)  translateX(-7rem) translateY(1rem);
+    }
+    .unskew-right{
+        right: 0;
+        transform: rotate(-12deg);
+    }
+    
+}
