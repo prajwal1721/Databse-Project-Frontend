@@ -24,8 +24,8 @@ export const WarehouseInsert=()=>{
                 capacity:capacity,
                 supervisor:supervisor,
                 functional:functional
-        }).
-        then(res=>alert(res.message))
+        })
+        .then(res=>alert(res.message))
         .catch(err=>alert(err.message))
     }
     return(

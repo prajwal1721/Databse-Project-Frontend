@@ -13,8 +13,8 @@ export const StorageInsert=()=>{
                 bin:bins,
                 section:section,
                 type:type
-        }).
-        then(res=>alert(res.message))
+        })
+        .then(res=>alert(res.message))
         .catch(err=>alert(err.message))
     }
     return(

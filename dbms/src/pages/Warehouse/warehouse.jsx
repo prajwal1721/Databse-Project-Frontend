@@ -1,16 +1,16 @@
 import React,{useState,useEffect} from 'react';
-import {Display} from '../../components/Display/display';
+import {Display} from '../../components/Display/displayLinkWarehouse';
 import axios from '../../axiosUrl';
 import { WarehouseBar } from './warehousebar';
 import {VehicleInsert} from './vehicle.insert';
 import {WarehouseInsert} from './warehouse.insert'
 import {StorageInsert} from './storage.insert';
 export const WarehousePage=()=>{
-        const [select,changeSelect]=useState(0);
-        const [DataEmployee,getDataEmployee]=useState([]);
+        // const [select,changeSelect]=useState(0);
+        // const [DataEmployee,getDataEmployee]=useState([]);
         const [DataWarehouse,getDataWarehouse]=useState([]);
-        const [DataVehicle,getDataVehicle]=useState([]);
-        const [DataStorage,getDataStorage]=useState([]);
+        // const [DataVehicle,getDataVehicle]=useState([]);
+        // const [DataStorage,getDataStorage]=useState([]);
         // const [DataEmployee,getData]=useState([]);
         const fetchAll=()=>{    
             axios.get('/warehouse/viewAll')

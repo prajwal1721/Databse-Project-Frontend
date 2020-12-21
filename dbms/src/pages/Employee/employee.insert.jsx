@@ -17,8 +17,8 @@ export const EmployeeInsert=()=>{
                 shift:shift,
                 permanant:permanant,
                 worksOn:worksOn
-        }).
-        then(res=>alert(res.message))
+        })
+        .then(res=>alert(res.message))
         .catch(err=>alert(err.message))
     }
     return(

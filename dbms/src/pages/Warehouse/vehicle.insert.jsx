@@ -21,8 +21,8 @@ export const VehicleInsert=()=>{
                 capacity:capacity,
                 lastMaintainance:lastMaintainance,
                 owns:owns
-        }).
-        then(res=>alert(res.message))
+        })
+        .then(res=>alert(res.message))
         .catch(err=>alert(err.message))
     }
     return(

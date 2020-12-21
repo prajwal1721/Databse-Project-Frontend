@@ -220,7 +220,7 @@ export const GoodsInsert=()=>{
                     set={setRecieveTimeDeparture}
             />
             <FormInput 
-                    label='Vehicle'
+                    label='Vehicle Number'
                     type='text'
                     required
                     value={vehicleNumber}
