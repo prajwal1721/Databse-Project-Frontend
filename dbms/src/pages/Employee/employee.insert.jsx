@@ -59,7 +59,7 @@ export const EmployeeInsert=()=>{
                     value={permanant}
                     set={setPermanant}
             />
-        <button onClick={handleClick}>Submit</button>
+        <button onClick={handleClick}>Add Employee</button>
         </div>
 
     )

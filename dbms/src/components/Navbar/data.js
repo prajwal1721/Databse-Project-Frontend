@@ -12,54 +12,8 @@ export const dataRight=[
             to:`/vehicle`
         },
         {
-            label:`Logistics`,
-            to:`/logistics`
+            label:`Goods`,
+            to:`/goods`
         }
     ]
-    
-export const dataLeft={
-    head:'Home',
-    section:[
-        {
-            name:`studies`,
-            class:`head`,
-            list:[
-                {
-                    label:`Study Notes`,
-                    to:'/file'
-                },
-                {
-                    label:`Library (coming soon)`,
-                    to:`/home`
-                },
-                {
-                    label:`Events`,
-                    to:`/home`
-                },
-                {
-                    label:`Communities`,
-                    to:`/home`
-                }
-            ]
-        },
-        {
-            name:`find a job`,
-            class:`p-left head`,
-            list:[
-                {
-                    label:`Jobs`,
-                    to:'/jobs'
-                },
-                {
-                    label:`Internships`,
-                    to:`/home`
-                },
-                {
-                    label:`Companies`,
-                    to:`/home`
-                }
-            ]
-        }
-    ]
-    
-}
+  

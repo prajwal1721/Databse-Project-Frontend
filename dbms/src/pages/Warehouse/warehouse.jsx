@@ -54,8 +54,8 @@ export const WarehousePage=()=>{
                 <WarehouseBar setOption={changeSelect}/>
                 {
                     select===1?<WarehouseInsert/>:
-                    select===2?<StorageInsert/>:
-                    select===3?<VehicleInsert/>:
+                    select===2?<VehicleInsert/>:
+                    select===3?<StorageInsert/>:
                     select===4?<></>:
                     <></>
                 }

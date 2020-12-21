@@ -4,18 +4,16 @@ import {WarehousePage} from './pages/Warehouse/warehouse';
 import {NavbarLeft} from './components/Navbar/navbarLeft';
 import {NavbarRight} from './components/Navbar/navbarRight';
 import { Switch,Route} from 'react-router-dom';
+import { GoodsPage } from './pages/Goods/goods';
 
 function App() {
   return (
     <div className="App">
       <NavbarLeft/>
       <Switch>
-        {/* employee routing */}
-        {/* <Route  exact component={EmployeeInsert} path={'/employee/insert'}/>  */}
-        {/* <Route  exact component={EmployeeSearch} path={'/employee/search'}/>   */}
         <Route exact component={EmployeePage} path='/employee'/>
-        <Route exact component={WarehousePage} path='/warehouse'/>
-        {/* <Route path='/'/> */}
+        <Route exact component={GoodsPage} path='/goods'/>
+        <Route component={WarehousePage} path='/warehouse'/>
       </Switch>
       <NavbarRight/>
     </div>

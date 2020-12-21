@@ -76,7 +76,7 @@ export const WarehouseInsert=()=>{
                     value={supervisor}
                     set={setSupervisor}
         />
-        <button onClick={handleClick}>Submit</button>
+        <button onClick={handleClick}>Add Warehouse</button>
         </div>
 
     )

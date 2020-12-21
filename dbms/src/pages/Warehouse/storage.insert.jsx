@@ -41,7 +41,7 @@ export const StorageInsert=()=>{
                     set={setType}
             />
          
-        <button onClick={handleClick}>Submit Storage</button>
+        <button onClick={handleClick}>Add Storage</button>
         </div>
 
     )

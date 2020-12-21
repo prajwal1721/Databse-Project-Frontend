@@ -77,7 +77,7 @@ export const VehicleInsert=()=>{
                     value={lastMaintainance}
                     set={setLastMaintainance}
             />
-        <button onClick={handleClick}>Submit Storage</button>
+        <button onClick={handleClick}>Add vehicle</button>
         </div>
 
     )
