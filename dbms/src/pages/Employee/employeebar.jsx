@@ -1,12 +1,15 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-export const EmployeeBar=()=>{
+export const EmployeeBar=({setOption})=>{
+    const handleClick=(e,option)=>{
+        e.preventDefault();
+        setOption(option)
+    }
     return(
         <div>
         <span>Employee</span>
             {
                 Data.map((i)=>{
-                    return <span><Link key={i.label} to={i.to}>{i.label}</Link></span>
+                    return <span onClick={(e)=>handleClick(e,i.set)} key={i.label} to={i.to}>{i.label}</span>
                 })  
             }
         </div>
@@ -16,18 +19,18 @@ export const EmployeeBar=()=>{
 const Data=[
     {
         label:'Insert',
-        to:'/insert'
+        set:1
     },
     {
         label:'Update',
-        to:'/update'
+        set:2
     },
     {
         label:'Delete',
-        to:'/delete'
+        set:3
     },
     {
-        label:'View',
-        to:'/view'
+        label:'Search',
+        set:4
     },
 ]

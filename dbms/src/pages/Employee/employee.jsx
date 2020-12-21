@@ -1,7 +1,11 @@
 import React,{useState,useEffect} from 'react';
 import {EmployeeBar} from './employeebar';
+import {EmployeeInsert} from './employee.insert';
+import {EmployeeSearch} from './employee.search';
+import {Display} from './display';
 import axios  from '../../axiosUrl';
 export const EmployeePage=()=>{
+    const [select,changeSelect]=useState(0);
     const [Data,getData]=useState([]);
     const fetchAll=()=>{
         axios.get('/employee/viewAll')
@@ -15,22 +19,21 @@ export const EmployeePage=()=>{
     useEffect(
         () => {
             fetchAll();
+            console.log('hell');
         },
         []
       );
     return(
         <div>
-            <EmployeeBar/>
-        
-            {console.log('hello')}
+            <EmployeeBar setOption={changeSelect}/>
             {
-                Data.map((data)=>
-                data.map((i)=>{
-                    return <div key={i.field}>
-                            <span>{i.value}</span>
-                        </div>
-                }))
+                select===1?<EmployeeInsert/>:
+                select===2?<></>:
+                select===3?<></>:
+                select===4?<EmployeeSearch/>:
+                <></>
             }
+            <Display Data={Data}/>
         </div>
     )
 };
