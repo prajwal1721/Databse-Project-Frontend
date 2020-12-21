@@ -1,4 +1,5 @@
 import React from 'react';
+
 export const EmployeeBar=({setOption})=>{
     const handleClick=(e,option)=>{
         e.preventDefault();

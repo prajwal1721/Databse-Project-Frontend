@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react';
 import {EmployeeBar} from './employeebar';
 import {EmployeeInsert} from './employee.insert';
 import {EmployeeSearch} from './employee.search';
-import {Display} from './display';
+import {Display} from '../../components/Display/display';
 import axios  from '../../axiosUrl';
 export const EmployeePage=()=>{
     const [select,changeSelect]=useState(0);

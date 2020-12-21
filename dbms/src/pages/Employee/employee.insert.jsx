@@ -1,9 +1,9 @@
 import React,{useState} from 'react';
 import {FormInput} from '../../components/FormInput/FormInput'
 import {SelectInput} from '../../components/FormInput/SelectInput'
+import axios from '../../axiosUrl';
 export const EmployeeInsert=()=>{
     const [name,setName]=useState('');
-    const [id,setId]=useState('');
     const [salary,setSalary]=useState('');
     const [shift,setShift]=useState('');
     const [permanant,setPermanant]=useState('No');
@@ -11,6 +11,15 @@ export const EmployeeInsert=()=>{
     const handleClick=(e)=>{
         e.preventDefault();
         console.log('submit');
+        axios.post('/employee/insert',{
+                name:name,
+                salary:salary,
+                shift:shift,
+                permanant:permanant,
+                worksOn:worksOn
+        }).
+        then(res=>alert(res.message))
+        .catch(err=>alert(err.message))
     }
     return(
         <div>
@@ -20,13 +29,6 @@ export const EmployeeInsert=()=>{
                     required
                     value={name}
                     set={setName}
-            />
-            <FormInput 
-                    label='EmployeeId'
-                    type='number'
-                    required
-                    value={id}
-                    set={setId}
             />
             <FormInput 
                     label='Salary'
