@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react';
 import {EmployeeBar} from './employeebar';
 import {EmployeeInsert} from './employee.insert';
 import {EmployeeSearch} from './employee.search';
+import {EmployeeDelete} from './employee.delete';
 import {Display} from '../../components/Display/display';
 import axios  from '../../axiosUrl';
 export const EmployeePage=()=>{
@@ -29,7 +30,7 @@ export const EmployeePage=()=>{
             {
                 select===1?<EmployeeInsert/>:
                 select===2?<></>:
-                select===3?<></>:
+                select===3?<EmployeeDelete/>:
                 select===4?<EmployeeSearch/>:
                 <></>
             }

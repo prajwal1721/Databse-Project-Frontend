@@ -5,8 +5,11 @@ import { WarehouseBar } from './warehousebar';
 import {VehicleInsert} from './vehicle.insert';
 import {WarehouseInsert} from './warehouse.insert'
 import {StorageInsert} from './storage.insert';
+import { WarehouseDelete } from './warehouse.delete';
+import {StorageDelete } from './storage.delete';
+import {VehicleDelete} from './vehicle.delete';
 export const WarehousePage=()=>{
-        // const [select,changeSelect]=useState(0);
+        const [select,changeSelect]=useState(0);
         // const [DataEmployee,getDataEmployee]=useState([]);
         const [DataWarehouse,getDataWarehouse]=useState([]);
         // const [DataVehicle,getDataVehicle]=useState([]);
@@ -53,9 +56,12 @@ export const WarehousePage=()=>{
             <div>
                 <WarehouseBar setOption={changeSelect}/>
                 {
-                    select===1?<WarehouseInsert/>:
-                    select===2?<VehicleInsert/>:
-                    select===3?<StorageInsert/>:
+                    select===11?<WarehouseInsert/>:
+                    select===12?<WarehouseDelete/>:
+                    select===21?<StorageInsert/>:
+                    select===22?<StorageDelete/>:
+                    select===31?<VehicleInsert/>:
+                    select===32?<VehicleDelete/>:
                     select===4?<></>:
                     <></>
                 }
