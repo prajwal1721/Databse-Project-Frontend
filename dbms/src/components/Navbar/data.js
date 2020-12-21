@@ -8,10 +8,6 @@ export const dataRight=[
             to:`/warehouse`
         },
         {
-            label:`Vehicle`,
-            to:`/vehicle`
-        },
-        {
             label:`Goods`,
             to:`/goods`
         }

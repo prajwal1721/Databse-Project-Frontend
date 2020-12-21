@@ -15,7 +15,7 @@ function App() {
         <Route exact component={GoodsPage} path='/goods'/>
         <Route component={WarehousePage} path='/warehouse'/>
       </Switch>
-      <NavbarRight/>
+      {/* <NavbarRight/> */}
     </div>
   );
 }
