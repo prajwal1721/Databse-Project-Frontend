@@ -4,6 +4,7 @@ import { GoodsInsert } from './goods.insert';
 import axios from '../../axiosUrl';
 import { GoodsBar } from './goodsbar';
 import { GoodsDelete } from './goods.delete';
+import { GoodsUpdate } from './goods.update';
 
 export const GoodsPage=()=>{
     const [select,changeSelect]=useState(0);
@@ -29,8 +30,9 @@ export const GoodsPage=()=>{
             <GoodsBar setOption={changeSelect}/>
             {
                 select===1?<GoodsInsert/>:
-                select===2?<GoodsDelete/>:
-                select===3?<></>:
+                select===3?<GoodsDelete/>:
+                select===2?<GoodsUpdate/>:
+                select===4?<></>:
                 <></>
             }
             <Display Data={Data}/>

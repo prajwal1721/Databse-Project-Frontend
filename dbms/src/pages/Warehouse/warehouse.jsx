@@ -6,8 +6,11 @@ import {VehicleInsert} from './vehicle.insert';
 import {WarehouseInsert} from './warehouse.insert'
 import {StorageInsert} from './storage.insert';
 import { WarehouseDelete } from './warehouse.delete';
+import { WarehouseUpdate } from './warehouse.update';
 import {StorageDelete } from './storage.delete';
+import {StorageUpdate } from './storage.update';
 import {VehicleDelete} from './vehicle.delete';
+import {VehicleUpdate} from './vehicle.update';
 export const WarehousePage=()=>{
         const [select,changeSelect]=useState(0);
         // const [DataEmployee,getDataEmployee]=useState([]);
@@ -58,10 +61,13 @@ export const WarehousePage=()=>{
                 {
                     select===11?<WarehouseInsert/>:
                     select===12?<WarehouseDelete/>:
+                    select===13?<WarehouseUpdate/>:
                     select===21?<StorageInsert/>:
                     select===22?<StorageDelete/>:
+                    select===23?<StorageUpdate/>:
                     select===31?<VehicleInsert/>:
                     select===32?<VehicleDelete/>:
+                    select===33?<VehicleUpdate/>:
                     select===4?<></>:
                     <></>
                 }

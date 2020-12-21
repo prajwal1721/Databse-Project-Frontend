@@ -3,6 +3,7 @@ import {EmployeeBar} from './employeebar';
 import {EmployeeInsert} from './employee.insert';
 import {EmployeeSearch} from './employee.search';
 import {EmployeeDelete} from './employee.delete';
+import {EmployeeUpdate} from './employee.update';
 import {Display} from '../../components/Display/display';
 import axios  from '../../axiosUrl';
 export const EmployeePage=()=>{
@@ -29,7 +30,7 @@ export const EmployeePage=()=>{
             <EmployeeBar setOption={changeSelect}/>
             {
                 select===1?<EmployeeInsert/>:
-                select===2?<></>:
+                select===2?<EmployeeUpdate/>:
                 select===3?<EmployeeDelete/>:
                 select===4?<EmployeeSearch/>:
                 <></>
