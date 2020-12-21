@@ -1,5 +1,4 @@
-export const dataRight={
-    list:[
+export const dataRight=[
         {
             label:`Employee`,
             to:'/employee'
@@ -17,7 +16,7 @@ export const dataRight={
             to:`/logistics`
         }
     ]
-}
+    
 export const dataLeft={
     head:'Home',
     section:[
