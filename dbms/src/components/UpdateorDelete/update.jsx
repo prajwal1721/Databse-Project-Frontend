@@ -12,19 +12,31 @@ export const Update=({header,operation,entity})=>{
     const [Header,setHeader]=useState(header);
     const handleAdd=async(e)=>{
         e.preventDefault();
+        if(field==='' || value==='' || field==='Select'){
+            alert("Enter the required Fields");
+            return ;
+        }
         await setHeader( Header.filter((i)=>i.value!==field))
         await AddParams([...parmsAdd,{field:field,value:value}]);
-        await setField(Header[0].value); // this is not working 
         await setValue('');
-        await console.log(Header);
+        await setField('');
+        // await console.log(Header);
     }
     const handleNew=async(e)=>{
         e.preventDefault();
-        await setHeader( Header.filter((i)=>i.value!==field))
+        if(Ufield==='' || Uvalue==='' || Ufield==='Select'){
+            alert("Enter the required Fields");
+            return;
+        }
+        if(Ufield==='id'){
+            alert("Id cannot change");
+            return;
+        }
+        await setHeader( Header.filter((i)=>i.value!==Ufield))
         await NewParams([...parmsNew,{field:Ufield,value:Uvalue}]);
-        await setField(Header[0].value); // this is not working 
-        await setValue('');
-        await console.log(Header);
+        await setUField('');
+        await setUValue('');
+        // await console.log(Header);
     }
     const handleClick=()=>{
         axios.post(`/${entity.toLowerCase()}/${operation.toLowerCase()}/`,{parmsAdd})
@@ -42,6 +54,7 @@ export const Update=({header,operation,entity})=>{
                 value={field}
                 set={setField}
                 optionItems={Header}
+                placeHolder={'Select'}
             />
             <FormInput
                 required={parmsAdd.length<1}

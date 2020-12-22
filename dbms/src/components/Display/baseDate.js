@@ -1,4 +1,5 @@
 export const WarehouseHead=[
+    {id:0,value:'Select'},
     {id:1,value:'id',},
     {id:2,value:'company',},
     {id:3,value:'location_lat',},
@@ -9,6 +10,7 @@ export const WarehouseHead=[
 ]
 
 export const VehicleHead=[
+    {id:0,value:'Select'},
     {id:1,value:'vehicleNo',},
     {id:2,value:'registrationNo',},
     {id:3,value:'type',},
@@ -19,6 +21,7 @@ export const VehicleHead=[
 ]
 
 export const EmployeeHead=[
+    {id:0,value:'Select'},
     {id:1,value:'id',},
     {id:2,value:'name',},
     {id:3,value:'salary',},
@@ -27,6 +30,7 @@ export const EmployeeHead=[
     {id:6,value:'worksOn'},
 ]
 export const StorageHead=[
+    {id:0,value:'Select'},
     {id:1,value:'id',},
     {id:2,value:'bin',},
     {id:3,value:'section',},
@@ -34,6 +38,7 @@ export const StorageHead=[
 ]
 
 export const GoodsHead=[
+    {id:0,value:'Select'},
     {id:1,value:'name'},
     {id:2,value:'price'},
     {id:3,value:'weight'},

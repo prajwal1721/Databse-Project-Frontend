@@ -9,11 +9,15 @@ export const Delete=({header,operation,entity})=>{
     const [Header,setHeader]=useState(header);
     const handleAdd=async(e)=>{
         e.preventDefault();
+        if(field==='' || value===''|| field==='Select'){
+            alert("Enter the required Fields");
+            return ;
+        }
         await setHeader( Header.filter((i)=>i.value!==field))
         await AddParams([...parmsAdd,{field:field,value:value}]);
         await setField(Header[0].value); // this is not working 
         await setValue('');
-        await console.log(Header);
+        // await console.log(Header);
     }
     const handleClick=()=>{
         axios.post(`/${entity.toLowerCase()}/${operation.toLowerCase()}/`,{parmsAdd})
@@ -29,6 +33,7 @@ export const Delete=({header,operation,entity})=>{
                 value={field}
                 set={setField}
                 optionItems={Header}
+                placeHolder={'Select'}
             />
             <FormInput
                 required={parmsAdd.length<1}
