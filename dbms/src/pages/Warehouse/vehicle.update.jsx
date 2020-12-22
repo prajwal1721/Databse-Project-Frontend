@@ -1,9 +1,9 @@
 import React from 'react';
 import {VehicleHead} from '../../components/Display/baseDate';
-import {UpdateOrDelete} from '../../components/UpdateorDelete/updateordelete';
+import {Update} from '../../components/UpdateorDelete/update';
 
 export const VehicleUpdate=()=>{
-    return <UpdateOrDelete 
+    return <Update 
                 header={VehicleHead}
                 entity={`Vehicle`}
                 operation={`Update`}

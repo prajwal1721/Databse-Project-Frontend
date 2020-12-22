@@ -1,9 +1,9 @@
 import React from 'react';
 import {WarehouseHead} from '../../components/Display/baseDate';
-import {UpdateOrDelete} from '../../components/UpdateorDelete/updateordelete';
+import {Delete} from '../../components/UpdateorDelete/delete';
 
 export const WarehouseDelete=()=>{
-    return <UpdateOrDelete 
+    return <Delete 
     header={WarehouseHead}
     entity={`Warehouse`}
     operation={`Delete`}

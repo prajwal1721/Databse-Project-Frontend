@@ -1,9 +1,9 @@
 import React from 'react';
 import {EmployeeHead} from '../../components/Display/baseDate';
-import {UpdateOrDelete} from '../../components/UpdateorDelete/updateordelete';
+import {Delete} from '../../components/UpdateorDelete/delete';
 
 export const EmployeeDelete=()=>{
-        return <UpdateOrDelete 
+        return <Delete 
                     header={EmployeeHead}
                     entity={`Employee`}
                     operation={`Delete`}

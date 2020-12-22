@@ -1,8 +1,8 @@
 import React from 'react';
 import {StorageHead} from '../../components/Display/baseDate';
-import {UpdateOrDelete} from '../../components/UpdateorDelete/updateordelete';
+import {Delete} from '../../components/UpdateorDelete/delete';
 export const StorageDelete=()=>{
-    return <UpdateOrDelete 
+    return <Delete 
                 header={StorageHead}
                 entity={`Storage`}
                 operation={`Delete`}
