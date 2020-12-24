@@ -6,7 +6,7 @@ export const Display=({Data,match})=>{
     var t={...WarehouseHead};
     return (
         <div>
-        {console.log(match)}
+        {/* {console.log(match)}
         {
             Data.map((data)=>{
             t=data;
@@ -18,7 +18,7 @@ export const Display=({Data,match})=>{
             })}
             </span>})
             
-        }
+        } */}
         </div>
     )
 }

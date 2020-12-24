@@ -10,9 +10,9 @@ export const GoodsPage=()=>{
     const [select,changeSelect]=useState(0);
     const [Data,getData]=useState([]);
     const fetchAll=()=>{
-        axios.get('/goods/viewAll')
+        axios.get('/WarehouseStocksManagementAPI/Employee')
         .then((res)=>{
-            getData(res.data);
+            getData(res.data.data);
         })
         .catch((err)=>{
             alert(err.msg);
