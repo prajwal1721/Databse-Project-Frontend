@@ -4,12 +4,16 @@ export const Display=({Data})=>{
     return (
         <div>
         {
+            Object.keys(Data[0]).map((t)=>
+                    <span>{t}</span>
+                )
+        }
+        {
             Data.map((data)=>
-            data.map((i)=>{
-                return <div key={i.field}>
-                        <span>{i.value}</span>
-                    </div>
-            }))
+                Object.values(data).map((t)=>
+                    <span>{t}</span>
+                )
+            )
         }
         </div>
     )

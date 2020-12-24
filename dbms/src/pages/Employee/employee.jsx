@@ -10,11 +10,13 @@ export const EmployeePage=()=>{
     const [select,changeSelect]=useState(0);
     const [Data,getData]=useState([]);
     const fetchAll=()=>{
-        axios.get('/employee/viewAll')
+        axios.get('/WarehouseStocksManagementAPI/Employee')
         .then((res)=>{
-            getData(res.data);
+            console.log(res);
+            getData(res.data.data);
         })
         .catch((err)=>{
+            console.log('here');
             alert(err.msg);
         })
     }
@@ -35,7 +37,7 @@ export const EmployeePage=()=>{
                 select===4?<EmployeeSearch/>:
                 <></>
             }
-            <Display Data={Data}/>
+            <Display Data={Data} />
         </div>
     )
 };
