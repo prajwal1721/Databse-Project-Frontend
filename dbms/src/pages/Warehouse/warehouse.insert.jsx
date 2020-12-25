@@ -20,12 +20,12 @@ export const WarehouseInsert=()=>{
         console.log('submit');
         axios.post('/WarehouseStocksManagementAPI/Warehouse',
         {
-                Wid : wid,
-                is_functional : functional,
+                Wid : Number.parseInt(wid),
+                is_functional : (functional=="True"?1:0),
                 company:company, 
                 address: address,
-                supervisor_id : supervisor
-             }
+                supervisor_id : Number.parseInt(supervisor)
+        }
         
        /*  {
                 company:company,
