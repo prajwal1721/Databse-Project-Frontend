@@ -2,14 +2,17 @@ import React,{useState} from 'react';
 import axios from '../../axiosUrl';
 import {FormInput}  from '../FormInput/FormInput';
 import {SelectInput}  from '../FormInput/SelectInput';
-export const Update=({header,operation,entity})=>{
+export const Update=({header,operation,entity,where})=>{
     const [parmsAdd,AddParams]=useState([]);
     const [parmsNew,NewParams]=useState([]);
     const [field,setField]=useState('');
     const [value,setValue]=useState('');
+    const [type,setType]=useState('');
     const [Ufield,setUField]=useState('');
     const [Uvalue,setUValue]=useState('');
     const [Header,setHeader]=useState(header);
+    var set = "";
+    var query="";
     const handleAdd=async(e)=>{
         e.preventDefault();
         if(field==='' || value==='' || field==='Select'){
@@ -22,7 +25,7 @@ export const Update=({header,operation,entity})=>{
         await setField('');
         // await console.log(Header);
     }
-    const handleNew=async(e)=>{
+    /* const handleNew=async(e)=>{
         e.preventDefault();
         if(Ufield==='' || Uvalue==='' || Ufield==='Select'){
             alert("Enter the required Fields");
@@ -37,9 +40,11 @@ export const Update=({header,operation,entity})=>{
         await setUField('');
         await setUValue('');
         // await console.log(Header);
-    }
+    } */
     const handleClick=()=>{
-        axios.post(`/${entity.toLowerCase()}/${operation.toLowerCase()}/`,{parmsAdd})
+        console.log(`/WarehouseStocksManagementAPI/${entity}`)
+        //WarehouseStocksManagementAPI/Employee
+        axios.post(`/UpdateData`,{query})
         .then(res=>alert(res.message))
         .catch(err=>alert(err.message));
     }
@@ -62,31 +67,35 @@ export const Update=({header,operation,entity})=>{
                 value={value}
                 set={setValue}
             /> 
-            <button onClick={handleAdd}>Add parameter</button>
+            
+            <button onClick={handleAdd}>Add parameter</button><br></br> 
             {
                 parmsAdd.map(i=>{
-                    return (
+                    set += ` \`${i.field}\` = '${i.value}',`;
+                    /* return (
+
                         <div key={i.field}>
                             <span>{i.field}</span>
                             <span>{i.value}</span>
                         </div>    
-                    )
+                    ) */
                 })
             }
-        <span>{`Add new Update values`}</span>
+        <span>{`where  `}</span>
             {/* new values */}
-            <SelectInput
+            {/* <SelectInput
                 label={'Select Field'}
                 value={Ufield}
                 set={setUField}
                 optionItems={Header}
-            />
+            /> */}
+            {where}:
             <FormInput
                 label='Value'
                 value={Uvalue}
                 set={setUValue}
             /> 
-            <button onClick={handleNew}>Update Value</button>
+           {/*  <button onClick={handleNew}>Update Value</button>
             {
                 parmsNew.map(i=>{
                     return (
@@ -96,8 +105,13 @@ export const Update=({header,operation,entity})=>{
                         </div>    
                     )
                 })
+            } */}
+            <div>{
+                query = ` ${operation} \`DBMS_Project\`.\`${entity}\` SET ${set.slice(0, -1)} WHERE (\`${where}\` = '${Uvalue}');`
+                
             }
-        <button onClick={handleClick}>{`${operation} ${entity}`}</button>
+            </div>
+        <button onClick={handleClick}>Update</button>
 
         </div>
     )
