@@ -44,7 +44,7 @@ export const Update=({header,operation,entity,where})=>{
     const handleClick=()=>{
         console.log(`/WarehouseStocksManagementAPI/${entity}`)
         //WarehouseStocksManagementAPI/Employee
-        axios.post(`/UpdateData`,{query})
+        axios.post(`/WarehouseStocksManagementAPI/UpdateData`,{query})
         .then(res=>alert(res.message))
         .catch(err=>alert(err.message));
     }
