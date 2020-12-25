@@ -16,20 +16,18 @@ export const EmployeePage=()=>{
             getData(res.data.data);
         })
         .catch((err)=>{
-            console.log('here');
             alert(err.msg);
         })
     }
     useEffect(
         () => {
             fetchAll();
-            console.log('hell');
         },
         []
       );
     return(
         <div>
-            <EmployeeBar setOption={changeSelect}/>
+            <EmployeeBar setOption={changeSelect} />
             {
                 select===1?<EmployeeInsert/>:
                 select===2?<EmployeeUpdate/>:
@@ -37,7 +35,7 @@ export const EmployeePage=()=>{
                 select===4?<EmployeeSearch/>:
                 <></>
             }
-            <Display Data={Data} />
+            <Display Data={Data} heading="Employee"/>
         </div>
     )
 };

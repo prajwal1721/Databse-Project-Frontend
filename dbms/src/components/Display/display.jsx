@@ -1,23 +1,12 @@
 import React from 'react';
+import { JsonToTable } from "react-json-to-table";
 
-export const Display=({Data})=>{
+export const Display=({Data,heading})=>{
     return (
-        <div>
-            {console.log(Data)}
-            {console.log('Data')}
-        {
-            Data.length>0?
-                Object.keys(Data[0]).map((t)=>
-                <span key={t}>{t}</span>):<></>
-        } 
-        {
-            Data.length>0?
-            Data.map((data)=>
-                Object.values(data).map((t)=>
-                    <span key={t}>{t}</span>
-                )
-            ):<></>
-        }
+        <div style={{margin: "40px"}}>
+            <div style={{fontSize: "20px", padding: "10px"}}>{heading}</div>
+            {console.log(heading)}
+            <JsonToTable json={Data} />
         </div>
     )
 }

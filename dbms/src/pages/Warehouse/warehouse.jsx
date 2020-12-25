@@ -20,7 +20,7 @@ export const WarehousePage=()=>{
         const fetchAll=()=>{    
             axios.get('/WarehouseStocksManagementAPI/Warehouse')
             .then((res)=>{
-                console.log(res);
+               // console.log(res);
                 getDataWarehouse(res.data.data);
             })
             .catch((err)=>{
@@ -51,7 +51,6 @@ export const WarehousePage=()=>{
         useEffect(
             () => {
                 fetchAll();
-                console.log('hell');
             },
             []
           );
@@ -71,9 +70,8 @@ export const WarehousePage=()=>{
                     select===4?<></>:
                     <></>
                 }
-                <Display Data={DataWarehouse}/>
-                <Display Data={DataEmployee}/>
-                <Display Data={DataVehicle}/>
+                <Display Data={DataWarehouse} heading="Warehouse"/>
+                <Display Data={DataVehicle} heading="Vehicle"/>
                 {/* <Display Data={DataStorage}/>  */}
             </div>
         )

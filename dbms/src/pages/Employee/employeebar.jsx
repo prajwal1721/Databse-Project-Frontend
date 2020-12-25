@@ -7,10 +7,10 @@ export const EmployeeBar=({setOption})=>{
     }
     return(
         <div>
-        <span>Employee</span>
+        <span>Employee: </span>
             {
                 Data.map((i)=>{
-                    return <span onClick={(e)=>handleClick(e,i.set)} key={i.label} to={i.to}>{i.label}</span>
+                    return <span onClick={(e)=>handleClick(e,i.set)} key={i.label} to={i.to} style={{padding: "10px"}}>{i.label}</span>
                 })  
             }
         </div>
@@ -26,12 +26,12 @@ const Data=[
         label:'Update',
         set:2
     },
-    {
+    /* {
         label:'Delete',
         set:3
-    },
-    {
+    }, */
+    /* {
         label:'Search',
         set:4
-    },
+    }, */
 ]

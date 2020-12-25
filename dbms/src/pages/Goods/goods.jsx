@@ -10,7 +10,7 @@ export const GoodsPage=()=>{
     const [select,changeSelect]=useState(0);
     const [Data,getData]=useState([]);
     const fetchAll=()=>{
-        axios.get('/WarehouseStocksManagementAPI/Employee')
+        axios.get('/WarehouseStocksManagementAPI/Goods')
         .then((res)=>{
             getData(res.data.data);
         })
@@ -35,7 +35,7 @@ export const GoodsPage=()=>{
                 select===4?<></>:
                 <></>
             }
-            <Display Data={Data}/>
+            <Display Data={Data} heading="Goods"/>
         </div>
     )
 }
