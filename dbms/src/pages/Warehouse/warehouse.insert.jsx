@@ -21,7 +21,7 @@ export const WarehouseInsert=()=>{
         axios.post('/WarehouseStocksManagementAPI/Warehouse',
         {
                 Wid : Number.parseInt(wid),
-                is_functional : (functional=="True"?1:0),
+                is_functional : (functional === "True"?1:0),
                 company:company, 
                 address: address,
                 supervisor_id : Number.parseInt(supervisor)
@@ -35,7 +35,11 @@ export const WarehouseInsert=()=>{
                 supervisor:supervisor,
                 functional:functional
         } */)
-        .then(res=>alert(res.message))
+        .then(res=>{
+                console.log("Inserted Succesfully")
+                window.location.reload(true);
+        }
+        )
         .catch(err=>alert(err.message))
     }
     return(
@@ -81,7 +85,7 @@ export const WarehouseInsert=()=>{
             <SelectInput 
                     label='Is functional'
                     type='number'
-                    optionItems={[{id:1,value:'True'},{id:2,value:''}]}
+                    optionItems={[{id:1,value:'True'},{id:2,value:'False'}]}
                     required
                     value={functional}
                     set={setFunctional}
