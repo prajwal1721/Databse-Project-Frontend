@@ -1,4 +1,5 @@
 import React from 'react';
+import '../bar.scss';
 
 export const WarehouseBar=({setOption})=>{
     const handleClick=(e,option)=>{
@@ -6,11 +7,11 @@ export const WarehouseBar=({setOption})=>{
         setOption(option)
     }
     return(
-        <div>
-        <span>Warehouse: </span>
+        <div style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
+
             {
                 Data.map((i)=>{
-                    return <span onClick={(e)=>handleClick(e,i.set)} key={i.label} to={i.to} style={{padding: "10px"}}>{i.label}</span>
+                    return <span onClick={(e)=>handleClick(e,i.set)}  key={i.label} to={i.to} style={{padding: "10px", margin: "0 10px"}}>{i.label}</span>
                 })  
             }
         </div>

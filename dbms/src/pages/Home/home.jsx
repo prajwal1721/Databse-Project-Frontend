@@ -14,7 +14,6 @@ export const HomeWarehouse=({match})=>{
     useEffect(
         () => {
             fetchAll();
-            console.log('hell');
         },
         []
       );

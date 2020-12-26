@@ -1,4 +1,5 @@
 import React from 'react';
+import '../bar.scss';
 
 export const EmployeeBar=({setOption})=>{
     const handleClick=(e,option)=>{
@@ -6,11 +7,11 @@ export const EmployeeBar=({setOption})=>{
         setOption(option)
     }
     return(
-        <div>
-        <span>Employee: </span>
+        <div style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
+       
             {
                 Data.map((i)=>{
-                    return <span onClick={(e)=>handleClick(e,i.set)} key={i.label} to={i.to} style={{padding: "10px"}}>{i.label}</span>
+                    return <span onClick={(e)=>handleClick(e,i.set)} key={i.label} to={i.to} style={{padding: "10px", margin: "0 10px"}}>{i.label}</span>
                 })  
             }
         </div>
@@ -19,11 +20,11 @@ export const EmployeeBar=({setOption})=>{
 
 const Data=[
     {
-        label:'Insert',
+        label:'Insert Employee',
         set:1
     },
     {
-        label:'Update',
+        label:'Update Employee',
         set:2
     },
     /* {

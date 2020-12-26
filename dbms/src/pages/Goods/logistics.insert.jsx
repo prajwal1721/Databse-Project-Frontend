@@ -28,8 +28,8 @@ export const LogisticsInsert=()=>{
         .catch(err=>alert(err.message))
     }
     return(
-        <div>
-        <div>Logistics Details</div>
+        <div style={{margin: '10px', border: '2px solid black', borderRadius: '10px', padding:'0px 10px 10px 10px'}}>
+        <div style={{fontSize: '24px', fontWeight: '600', margin: '10px'}}>Logistics Details</div>
             <FormInput 
             label='Logistics ID'
             type='number'

@@ -19,8 +19,8 @@ export const CategoryInsert=()=>{
         .catch(err=>alert(err.message))
     }
     return(
-        <div>
-        <div>Category Details</div>
+        <div style={{margin: '10px', border: '2px solid black', borderRadius: '10px', padding:'0px 10px 10px 10px'}}>
+        <div style={{fontSize: '24px', fontWeight: '600', margin: '10px'}}>Category Details</div>
         <FormInput 
             label='Category'
             type='Text'
