@@ -38,7 +38,7 @@ export const LogisticsInsert=()=>{
             set={setLid}
     />
 
-            <div>{`Arrival Details`}</div>
+            <div style={{fontWeight: '600', fontSize: '18px'}}>{`Arrival Details`}</div>
             
             <FormInput 
                     label='Start Location'
@@ -63,7 +63,7 @@ export const LogisticsInsert=()=>{
                     set={setRecieveTimeArrival}
             />
 
-            <div>{`Departure Details`}</div>
+            <div style={{fontWeight: '600', fontSize: '18px'}}>{`Departure Details`}</div>
 
             <FormInput 
                     label='End Location '

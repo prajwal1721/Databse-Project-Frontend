@@ -24,7 +24,7 @@ export const WarehouseInsert=()=>{
                 is_functional : (functional === "True"?1:0),
                 company:company, 
                 address: address,
-                supervisor_id : Number.parseInt(supervisor)
+                supervisor_id : 0
         }
         
        /*  {
@@ -91,14 +91,16 @@ export const WarehouseInsert=()=>{
                     value={functional}
                     set={setFunctional}
             />
-        <div onClick={()=>history.push('/employee')}>{`Enter a new supervisor`}</div>
+     {
+        /* <div onClick={()=>history.push('/employee')}>{`Enter a new supervisor`}</div>
         <FormInput 
                     label='Supervisor Id'
                     type='number'
                     required
                     value={supervisor}
                     set={setSupervisor}
-        />
+        /> */
+     }  
         <button onClick={handleClick}>Add Warehouse</button>
         </div>
 
