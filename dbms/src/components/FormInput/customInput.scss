@@ -1,0 +1,51 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600);
+
+input {
+    appearance: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Open Sans', sans-serif;
+    outline: none;
+    border: none;
+    line-height: 1;
+    height: 32px;
+    padding: 0 16px;
+    font-size: 14px;
+    margin-top: 2px;
+    color: #666;
+    margin: 10px;
+  }
+
+  select{
+    border-radius: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Open Sans', sans-serif;
+    outline: none;
+    border: none;
+    line-height: 1;
+    height: 28px;
+    padding: 0 16px;
+    margin: 10px;
+    font-size: 14px;
+    margin-top: 2px;
+    color: rgb(0, 0, 0);
+  }
+
+  button{
+    border-radius: 16px;
+    border: 1px solid #ccc!important;
+    padding: 7px 13px 7px 13px;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    background: #ffffff;
+    color: #000000;
+    margin: 10px;
+  }
+
+  ::placeholder {
+    font-style: italic;
+    color: rgb(114, 114, 114);
+  }

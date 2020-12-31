@@ -5,38 +5,44 @@ import { WarehouseBar } from './warehousebar';
 import {VehicleInsert} from './vehicle.insert';
 import {WarehouseInsert} from './warehouse.insert'
 import {StorageInsert} from './storage.insert';
+import { WarehouseDelete } from './warehouse.delete';
+import { WarehouseUpdate } from './warehouse.update';
+import {StorageDelete } from './storage.delete';
+import {StorageUpdate } from './storage.update';
+import {VehicleDelete} from './vehicle.delete';
+import {VehicleUpdate} from './vehicle.update';
 export const WarehousePage=()=>{
         const [select,changeSelect]=useState(0);
         const [DataEmployee,getDataEmployee]=useState([]);
         const [DataWarehouse,getDataWarehouse]=useState([]);
         const [DataVehicle,getDataVehicle]=useState([]);
         const [DataStorage,getDataStorage]=useState([]);
-        // const [DataEmployee,getData]=useState([]);
         const fetchAll=()=>{    
-            axios.get('/warehouse/viewAll')
+            axios.get('/WarehouseStocksManagementAPI/Warehouse')
             .then((res)=>{
-                getDataWarehouse(res.data);
+               // console.log(res);
+                getDataWarehouse(res.data.data);
             })
             .catch((err)=>{
                 alert(err.msg);
             });
-            // axios.get('/employee/viewAll')
+            axios.get('/WarehouseStocksManagementAPI/Employee')
+            .then((res)=>{
+                getDataEmployee(res.data.data);
+            })
+            .catch((err)=>{
+                alert(err.msg);
+            });
+            axios.get('/WarehouseStocksManagementAPI/Vehicle')
+            .then((res)=>{
+                getDataVehicle(res.data.data);
+            })
+            .catch((err)=>{
+                alert(err.msg);
+            })
+            // axios.get('/WarehouseStocksManagementAPI/Storage')
             // .then((res)=>{
-            //     getDataEmployee(res.data);
-            // })
-            // .catch((err)=>{
-            //     alert(err.msg);
-            // });
-            // axios.get('/vehicle/viewAll')
-            // .then((res)=>{
-            //     getDataVehicle(res.data);
-            // })
-            // .catch((err)=>{
-            //     alert(err.msg);
-            // })
-            // axios.get('/storage/viewAll')
-            // .then((res)=>{
-            //     getDataStorage(res.data);
+            //     getDataStorage(res.data.data);
             // })
             // .catch((err)=>{
             //     alert(err.msg);
@@ -45,7 +51,6 @@ export const WarehousePage=()=>{
         useEffect(
             () => {
                 fetchAll();
-                console.log('hell');
             },
             []
           );
@@ -53,16 +58,21 @@ export const WarehousePage=()=>{
             <div>
                 <WarehouseBar setOption={changeSelect}/>
                 {
-                    select===1?<WarehouseInsert/>:
-                    select===2?<VehicleInsert/>:
-                    select===3?<StorageInsert/>:
+                    select===11?<WarehouseInsert/>:
+                    select===12?<WarehouseDelete/>:
+                    select===13?<WarehouseUpdate/>:
+                    select===21?<StorageInsert/>:
+                    select===22?<StorageDelete/>:
+                    select===23?<StorageUpdate/>:
+                    select===31?<VehicleInsert/>:
+                    select===32?<VehicleDelete/>:
+                    select===33?<VehicleUpdate/>:
                     select===4?<></>:
                     <></>
                 }
-                <Display Data={DataWarehouse}/>
-                {/* <Display Data={DataEmployee}/>
-                <Display Data={DataVehicle}/>
-                <Display Data={DataStorage}/> */}
+                <Display Data={DataWarehouse} heading="Warehouse"/>
+                <Display Data={DataVehicle} heading="Vehicle"/>
+                {/* <Display Data={DataStorage}/>  */}
             </div>
         )
 };

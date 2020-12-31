@@ -1,5 +1,28 @@
 .left{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex;
     align-content: center;
     justify-content: left;
-    width: 1.3rem;
+    background-color: rgb(229, 235, 253);
+    color: black;
 }
+.heading{
+    font-weight: 600!important;
+}
+
+a{
+    margin: 10px;
+    color: black;
+    font-size: 22px;
+    line-height: 1.25rem;
+    font-weight: 500;
+    text-decoration: none;
+    height: 100%;
+    padding: 10px;
+}
+
+a:hover, a:active {
+    
+    background-color: rgb(215, 224, 252);
+  }
